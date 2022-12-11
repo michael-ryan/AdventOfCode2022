@@ -8,8 +8,8 @@ import (
 	day3 "github.com/michael-ryan/AoC22/Day3"
 	day4 "github.com/michael-ryan/AoC22/Day4"
 	day5 "github.com/michael-ryan/AoC22/Day5"
+	day6 "github.com/michael-ryan/AoC22/Day6"
 	/*
-		day6 "github.com/michael-ryan/AoC22/Day6"
 		day7 "github.com/michael-ryan/AoC22/Day7"
 		day8 "github.com/michael-ryan/AoC22/Day8"
 		day9 "github.com/michael-ryan/AoC22/Day9"
@@ -37,8 +37,8 @@ func main() {
 	showDay3Results()
 	showDay4Results()
 	showDay5Results()
-       /*
-	        showDay6Results()
+	showDay6Results()
+	/*
 		showDay7Results()
 		showDay8Results()
 		showDay9Results()
@@ -96,13 +96,14 @@ func showDay5Results() {
 	fmt.Println("Puzzle 2:", two)
 }
 
-/*
 func showDay6Results() {
 	fmt.Println("Day 6")
 	one, two := day6.Answers("resources/inputs/day6.txt")
 	fmt.Println("Puzzle 1:", one)
 	fmt.Println("Puzzle 2:", two)
 }
+
+/*
 func showDay7Results() {
 	fmt.Println("Day 7")
 	one, two := day7.Answers("resources/inputs/day7.txt")
