@@ -1,7 +1,6 @@
 package day4
 
 import (
-	_ "embed"
 	"sort"
 	"strconv"
 	"strings"

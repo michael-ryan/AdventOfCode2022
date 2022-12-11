@@ -1,7 +1,6 @@
 package day5
 
 import (
-	_ "embed"
 	"strconv"
 	"strings"
 

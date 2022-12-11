@@ -1,7 +1,6 @@
 package day3
 
 import (
-	_ "embed"
 	"strings"
 
 	"github.com/michael-ryan/AoC22/common"

@@ -1,16 +1,16 @@
-package day1
+package day4
 
 import (
 	"fmt"
 	"testing"
 )
 
-var samplePath string = "../resources/samples/day1.txt"
+var samplePath string = "../resources/samples/day4.txt"
 
 func TestPuzzle1(t *testing.T) {
 	actual, _ := Answers(samplePath)
 
-	var expected int = 24000
+	var expected int = 2
 
 	message := fmt.Sprintf("Expected %v, got %v\n", expected, actual)
 
@@ -24,7 +24,7 @@ func TestPuzzle1(t *testing.T) {
 func TestPuzzle2(t *testing.T) {
 	_, actual := Answers(samplePath)
 
-	var expected int = 45000
+	var expected int = 4
 
 	message := fmt.Sprintf("Expected %v, got %v\n", expected, actual)
 
