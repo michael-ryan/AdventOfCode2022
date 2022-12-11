@@ -1,6 +1,7 @@
 package day4
 
 import (
+	_ "embed"
 	"sort"
 	"strconv"
 	"strings"
@@ -9,8 +10,17 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-func Puzzle1() int {
-	lines := common.ReadFileAsStringArray("Day4/input.txt")
+var (
+	//go:embed input.txt
+	input string
+)
+
+func Answers() (int, int) {
+	return puzzle1(), puzzle2()
+}
+
+func puzzle1() int {
+	lines := common.Stuff(input)
 
 	eclipseOccurences := 0
 	for _, line := range lines {
@@ -33,8 +43,8 @@ func Puzzle1() int {
 	return eclipseOccurences
 }
 
-func Puzzle2() int {
-	lines := common.ReadFileAsStringArray("Day4/input.txt")
+func puzzle2() int {
+	lines := common.Stuff(input)
 
 	overlapOccurences := 0
 	for _, line := range lines {

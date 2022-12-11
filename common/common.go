@@ -14,3 +14,7 @@ func ReadFileAsStringArray(path string) []string {
 
 	return strings.Split(string(data), "\n")
 }
+
+func Stuff(data string) []string {
+	return strings.Split(string(data), "\n")
+}

@@ -1,14 +1,24 @@
 package day3
 
 import (
+	_ "embed"
 	"strings"
 
 	"github.com/michael-ryan/AoC22/common"
 )
 
-func Puzzle1() int {
+var (
+	//go:embed input.txt
+	input string
+)
+
+func Answers() (int, int) {
+	return puzzle1(), puzzle2()
+}
+
+func puzzle1() int {
 	sumOfPriorities := 0
-	for _, line := range common.ReadFileAsStringArray("Day3/input.txt") {
+	for _, line := range common.Stuff(input) {
 		length := len(line)
 		commonItem := findCommonByte(line[:length/2], line[length/2:])
 		sumOfPriorities += getItemPriority(commonItem)
@@ -17,9 +27,9 @@ func Puzzle1() int {
 	return sumOfPriorities
 }
 
-func Puzzle2() int {
+func puzzle2() int {
 	sumOfPriorities := 0
-	lines := common.ReadFileAsStringArray("Day3/input.txt")
+	lines := common.Stuff(input)
 	for elfNumber := 0; elfNumber <= len(lines)-3; elfNumber += 3 {
 		bag1 := stringToSet(lines[elfNumber])
 		bag2 := stringToSet(lines[elfNumber+1])

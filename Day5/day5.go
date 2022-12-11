@@ -1,13 +1,23 @@
 package day5
 
 import (
+	_ "embed"
 	"strconv"
 	"strings"
 
 	"github.com/michael-ryan/AoC22/common"
 )
 
-func Puzzle1() string {
+var (
+	//go:embed input.txt
+	input string
+)
+
+func Answers() (string, string) {
+	return puzzle1(), puzzle2()
+}
+
+func puzzle1() string {
 	state, instructions := parseInput()
 
 	doInstructions(state, instructions, func(state []common.Stack[byte], instruction Instruction) {
@@ -19,7 +29,7 @@ func Puzzle1() string {
 	return extractAnswer(state)
 }
 
-func Puzzle2() string {
+func puzzle2() string {
 	state, instructions := parseInput()
 
 	doInstructions(state, instructions, func(state []common.Stack[byte], instruction Instruction) {
@@ -42,7 +52,7 @@ func doInstructions(state []common.Stack[byte], instructions []Instruction, doIn
 }
 
 func parseInput() ([]common.Stack[byte], []Instruction) {
-	input := common.ReadFileAsStringArray("Day5/input.txt")
+	input := common.Stuff(input)
 
 	var blankLine int = 0
 
