@@ -37,6 +37,28 @@ func main() {
 	showDay3Results()
 	showDay4Results()
 	showDay5Results()
+       /*
+	        showDay6Results()
+		showDay7Results()
+		showDay8Results()
+		showDay9Results()
+		showDay10Results()
+		showDay11Results()
+		showDay12Results()
+		showDay13Results()
+		showDay14Results()
+		showDay15Results()
+		showDay16Results()
+		showDay17Results()
+		showDay18Results()
+		showDay19Results()
+		showDay20Results()
+		showDay21Results()
+		showDay22Results()
+		showDay23Results()
+		showDay24Results()
+		showDay25Results()
+	*/
 }
 
 func showDay1Results() {
