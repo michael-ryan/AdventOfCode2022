@@ -10,17 +10,21 @@ func Answers(inputPath string) (int, int) {
 }
 
 func puzzle1(line string) int {
-	for i := 0; i < len(line)-4; i++ {
-		substring := line[i : i+4]
-		if unique(substring) {
-			return i + 4
-		}
-	}
-	panic("No solution found")
+	return solve(line, 4)
 }
 
 func puzzle2(line string) int {
-	return 0
+	return solve(line, 14)
+}
+
+func solve(line string, uniqueStringLength int) int {
+	for i := 0; i < len(line)-uniqueStringLength; i++ {
+		substring := line[i : i+uniqueStringLength]
+		if unique(substring) {
+			return i + uniqueStringLength
+		}
+	}
+	panic("No solution found")
 }
 
 // from https://codereview.stackexchange.com/a/251210/49121

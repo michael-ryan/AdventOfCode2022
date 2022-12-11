@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var samplePath string = "../resources/samples/day5.txt"
+var samplePath string = "../resources/samples/day6.txt"
 
 func TestPuzzle1(t *testing.T) {
 	actual, _ := Answers(samplePath)
@@ -24,7 +24,7 @@ func TestPuzzle1(t *testing.T) {
 func TestPuzzle2(t *testing.T) {
 	_, actual := Answers(samplePath)
 
-	var expected int = -1
+	var expected int = 19
 
 	message := fmt.Sprintf("Expected %v, got %v\n", expected, actual)
 
