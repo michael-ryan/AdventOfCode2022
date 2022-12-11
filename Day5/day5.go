@@ -8,17 +8,13 @@ import (
 	"github.com/michael-ryan/AoC22/common"
 )
 
-var (
-	//go:embed input.txt
-	input string
-)
-
-func Answers() (string, string) {
-	return puzzle1(), puzzle2()
+func Answers(inputPath string) (string, string) {
+	lines := common.ReadFileAsStringArray(inputPath)
+	return puzzle1(lines), puzzle2(lines)
 }
 
-func puzzle1() string {
-	state, instructions := parseInput()
+func puzzle1(lines []string) string {
+	state, instructions := parseInput(lines)
 
 	doInstructions(state, instructions, func(state []common.Stack[byte], instruction Instruction) {
 		for i := 0; i < instruction.quantity; i++ {
@@ -29,8 +25,8 @@ func puzzle1() string {
 	return extractAnswer(state)
 }
 
-func puzzle2() string {
-	state, instructions := parseInput()
+func puzzle2(lines []string) string {
+	state, instructions := parseInput(lines)
 
 	doInstructions(state, instructions, func(state []common.Stack[byte], instruction Instruction) {
 		tempStack := common.NewStack[byte]()
@@ -51,19 +47,17 @@ func doInstructions(state []common.Stack[byte], instructions []Instruction, doIn
 	}
 }
 
-func parseInput() ([]common.Stack[byte], []Instruction) {
-	input := common.Stuff(input)
-
+func parseInput(lines []string) ([]common.Stack[byte], []Instruction) {
 	var blankLine int = 0
 
-	for number, line := range input {
+	for number, line := range lines {
 		if line == "" {
 			blankLine = number
 		}
 	}
 
-	state := parseInitialState(input[:blankLine])
-	unparsedInstructions := input[blankLine+1:]
+	state := parseInitialState(lines[:blankLine])
+	unparsedInstructions := lines[blankLine+1:]
 
 	instructions := make([]Instruction, len(unparsedInstructions))
 

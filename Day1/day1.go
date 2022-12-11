@@ -8,17 +8,12 @@ import (
 	"github.com/michael-ryan/AoC22/common"
 )
 
-var (
-	//go:embed input.txt
-	input string
-)
-
-func Answers() (int, int) {
-	return puzzle1(), puzzle2()
+func Answers(inputPath string) (int, int) {
+	lines := common.ReadFileAsStringArray(inputPath)
+	return puzzle1(lines), puzzle2(lines)
 }
 
-func calculateTotalCaloriesByElf() []int {
-	var lines []string = common.Stuff(input)
+func calculateTotalCaloriesByElf(lines []string) []int {
 	var sums []int = make([]int, 0)
 	var total int
 	for _, line := range lines {
@@ -31,19 +26,21 @@ func calculateTotalCaloriesByElf() []int {
 		}
 	}
 
+	sums = append(sums, total)
+
 	sort.Ints(sums)
 
 	return sums
 }
 
-func puzzle1() int {
-	sums := calculateTotalCaloriesByElf()
+func puzzle1(lines []string) int {
+	sums := calculateTotalCaloriesByElf(lines)
 
 	return sums[len(sums)-1]
 }
 
-func puzzle2() int {
-	sums := calculateTotalCaloriesByElf()
+func puzzle2(lines []string) int {
+	sums := calculateTotalCaloriesByElf(lines)
 
 	return sums[len(sums)-1] + sums[len(sums)-2] + sums[len(sums)-3]
 }

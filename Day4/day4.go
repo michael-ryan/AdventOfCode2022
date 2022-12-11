@@ -10,18 +10,12 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-var (
-	//go:embed input.txt
-	input string
-)
-
-func Answers() (int, int) {
-	return puzzle1(), puzzle2()
+func Answers(inputPath string) (int, int) {
+	lines := common.ReadFileAsStringArray(inputPath)
+	return puzzle1(lines), puzzle2(lines)
 }
 
-func puzzle1() int {
-	lines := common.Stuff(input)
-
+func puzzle1(lines []string) int {
 	eclipseOccurences := 0
 	for _, line := range lines {
 		elf1, elf2 := parseLine(line)
@@ -43,9 +37,7 @@ func puzzle1() int {
 	return eclipseOccurences
 }
 
-func puzzle2() int {
-	lines := common.Stuff(input)
-
+func puzzle2(lines []string) int {
 	overlapOccurences := 0
 	for _, line := range lines {
 		elf1, elf2 := parseLine(line)

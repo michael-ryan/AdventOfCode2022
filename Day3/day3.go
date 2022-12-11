@@ -7,18 +7,14 @@ import (
 	"github.com/michael-ryan/AoC22/common"
 )
 
-var (
-	//go:embed input.txt
-	input string
-)
-
-func Answers() (int, int) {
-	return puzzle1(), puzzle2()
+func Answers(inputPath string) (int, int) {
+	lines := common.ReadFileAsStringArray(inputPath)
+	return puzzle1(lines), puzzle2(lines)
 }
 
-func puzzle1() int {
+func puzzle1(lines []string) int {
 	sumOfPriorities := 0
-	for _, line := range common.Stuff(input) {
+	for _, line := range lines {
 		length := len(line)
 		commonItem := findCommonByte(line[:length/2], line[length/2:])
 		sumOfPriorities += getItemPriority(commonItem)
@@ -27,9 +23,8 @@ func puzzle1() int {
 	return sumOfPriorities
 }
 
-func puzzle2() int {
+func puzzle2(lines []string) int {
 	sumOfPriorities := 0
-	lines := common.Stuff(input)
 	for elfNumber := 0; elfNumber <= len(lines)-3; elfNumber += 3 {
 		bag1 := stringToSet(lines[elfNumber])
 		bag2 := stringToSet(lines[elfNumber+1])

@@ -7,16 +7,12 @@ import (
 	"github.com/michael-ryan/AoC22/common"
 )
 
-var (
-	//go:embed input.txt
-	input string
-)
-
-func Answers() (int, int) {
-	return puzzle1(), puzzle2()
+func Answers(inputPath string) (int, int) {
+	lines := common.ReadFileAsStringArray(inputPath)
+	return puzzle1(lines), puzzle2(lines)
 }
 
-func puzzle1() int {
+func puzzle1(lines []string) int {
 	throws := make(map[byte]string)
 
 	throws['A'] = "Rock"
@@ -34,7 +30,6 @@ func puzzle1() int {
 	scoreForChosenThrow["Paper"] = 2
 	scoreForChosenThrow["Scissors"] = 3
 
-	var lines []string = common.Stuff(input)
 	var score int = 0
 	for _, line := range lines {
 		splitLine := strings.Split(line, " ")
@@ -52,7 +47,7 @@ func puzzle1() int {
 	return score
 }
 
-func puzzle2() int {
+func puzzle2(lines []string) int {
 	throws := make(map[byte]string)
 
 	throws['A'] = "Rock"
@@ -65,7 +60,6 @@ func puzzle2() int {
 	scoreForOutcome['Y'] = 3
 	scoreForOutcome['Z'] = 6
 
-	var lines []string = common.Stuff(input)
 	var score int = 0
 	for _, line := range lines {
 		splitLine := strings.Split(line, " ")
