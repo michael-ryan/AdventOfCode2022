@@ -51,9 +51,6 @@ func solve(rope Rope, instructions []Instruction) int {
 			rope.knots[0] = rope.knots[0].translate(instruction.direction)
 
 			for j := 0; j < len(rope.knots)-1; j++ {
-				// if i == 12 {
-				// 	fmt.Println("cunt")
-				// }
 				head := rope.knots[j]
 				tail := rope.knots[j+1]
 
