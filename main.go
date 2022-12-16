@@ -5,6 +5,7 @@ import (
 
 	day1 "github.com/michael-ryan/AoC22/Day1"
 	day10 "github.com/michael-ryan/AoC22/Day10"
+	day11 "github.com/michael-ryan/AoC22/Day11"
 	day2 "github.com/michael-ryan/AoC22/Day2"
 	day3 "github.com/michael-ryan/AoC22/Day3"
 	day4 "github.com/michael-ryan/AoC22/Day4"
@@ -14,21 +15,20 @@ import (
 	day8 "github.com/michael-ryan/AoC22/Day8"
 	day9 "github.com/michael-ryan/AoC22/Day9"
 	/*
-		day11 "github.com/michael-ryan/AoC22/Day11"
 		day12 "github.com/michael-ryan/AoC22/Day12"
-		day13 "github.com/michael-ryan/AoC22/Day13"
-		day14 "github.com/michael-ryan/AoC22/Day14"
-		day15 "github.com/michael-ryan/AoC22/Day15"
-		day16 "github.com/michael-ryan/AoC22/Day16"
-		day17 "github.com/michael-ryan/AoC22/Day17"
-		day18 "github.com/michael-ryan/AoC22/Day18"
-		day19 "github.com/michael-ryan/AoC22/Day19"
-		day20 "github.com/michael-ryan/AoC22/Day20"
-		day21 "github.com/michael-ryan/AoC22/Day21"
-		day22 "github.com/michael-ryan/AoC22/Day22"
-		day23 "github.com/michael-ryan/AoC22/Day23"
-		day24 "github.com/michael-ryan/AoC22/Day24"
-		day25 "github.com/michael-ryan/AoC22/Day25"
+			day13 "github.com/michael-ryan/AoC22/Day13"
+			day14 "github.com/michael-ryan/AoC22/Day14"
+			day15 "github.com/michael-ryan/AoC22/Day15"
+			day16 "github.com/michael-ryan/AoC22/Day16"
+			day17 "github.com/michael-ryan/AoC22/Day17"
+			day18 "github.com/michael-ryan/AoC22/Day18"
+			day19 "github.com/michael-ryan/AoC22/Day19"
+			day20 "github.com/michael-ryan/AoC22/Day20"
+			day21 "github.com/michael-ryan/AoC22/Day21"
+			day22 "github.com/michael-ryan/AoC22/Day22"
+			day23 "github.com/michael-ryan/AoC22/Day23"
+			day24 "github.com/michael-ryan/AoC22/Day24"
+			day25 "github.com/michael-ryan/AoC22/Day25"
 	*/)
 
 func main() {
@@ -42,8 +42,8 @@ func main() {
 	showDay8Results()
 	showDay9Results()
 	showDay10Results()
+	showDay11Results()
 	/*
-		showDay11Results()
 		showDay12Results()
 		showDay13Results()
 		showDay14Results()
@@ -128,16 +128,17 @@ func showDay10Results() {
 	fmt.Println("Day 10")
 	one, two := day10.Answers("resources/inputs/day10.txt")
 	fmt.Println("Puzzle 1:", one)
-	fmt.Println("Puzzle 2:\n", two)
+	fmt.Printf("Puzzle 2:\n%v\n", two)
 }
 
-/*
 func showDay11Results() {
 	fmt.Println("Day 11")
 	one, two := day11.Answers("resources/inputs/day11.txt")
 	fmt.Println("Puzzle 1:", one)
 	fmt.Println("Puzzle 2:", two)
 }
+
+/*
 func showDay12Results() {
 	fmt.Println("Day 12")
 	one, two := day12.Answers("resources/inputs/day12.txt")
